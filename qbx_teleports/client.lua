@@ -24,7 +24,7 @@ CreateThread(function ()
                 coords = coords,
                 radius = 2,
                 onEnter = function ()
-                    lib.showTextUI(entrance.drawText)
+                    exports['jg-textui']:ShowText(entrance.drawText)
                     destination = {
                         coords = vec(exit.coords),
                         ignoreGround = exit.ignoreGround,
@@ -32,7 +32,7 @@ CreateThread(function ()
                     }
                 end,
                 onExit = function ()
-                    lib.hideTextUI()
+                    exports['jg-textui']:HideText()
                     destination = nil
                 end
             })

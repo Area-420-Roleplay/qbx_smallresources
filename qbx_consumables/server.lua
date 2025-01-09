@@ -69,6 +69,7 @@ local function relieveStress(source, min, max)
     end
 end
 
+--[[
 for alcohol, params in pairs(config.consumables.alcohol) do
     exports.qbx_core:CreateUseableItem(alcohol, function(source, item)
         local drank = lib.callback.await('consumables:client:DrinkAlcohol', source, params.alcoholLevel, params.anim, params.prop)
@@ -131,6 +132,7 @@ end)
 exports.qbx_core:CreateUseableItem('meth', function(source)
     TriggerClientEvent('consumables:client:meth', source)
 end)
+--]]
 
 exports.qbx_core:CreateUseableItem('lockpick', function(source)
     TriggerClientEvent('lockpicks:UseLockpick', source, false)
